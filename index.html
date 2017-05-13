@@ -12,29 +12,30 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     
     <link rel="stylesheet" type="text/css" href="js/wysiwym/wysiwym.css" />
+    <link rel="stylesheet" type="text/css" href="font/stylesheet.css" />
 
 	<style>	
-		body { font:16px/1.5 arial; background:#eee; margin:0; padding:2em 0; }
+		body { font:16px/1.5 arial; background:#eee; margin:0; padding:2em 0; filter: invert(100%); }
 		a { text-decoration:none; color:#666; }
 		a:hover { color:#000; }
-		#entries { position:fixed; padding:1em 0 0 0; left:0; bottom:0; top:1em; float:left; width:100%; }
-		#entries nav { margin-top:1em; border-top:1px solid #ddd; }
-		#entries a.edit { margin-right:-100em; border-bottom:1px solid #ddd; padding-left:2em; }
-		#entries li { position:relative; }
+		#entries { position:fixed; padding:0 0 0 0; left:0; bottom:0; top:0; float:left; width:100%; background: #ddd; }
+		#entries nav { margin-top:0; border-top:1px solid #ddd; }
+		#entries a.edit { margin-right:-100em; border-bottom:1px solid #d8d8d8; padding-left:1em; font-family: 'cutive_monoregular', monospace; font-weight: bold; }
+		#entries li { position:relative; font-size: 22px; }
 		#entries li:hover { background:#ddd; }
-		#entries a.edit:before { content:''; margin:0 -10em -10em -1.3em; display:block; float:left; width:20px; height:13px; background:url('images/icon-doc.png') no-repeat top left; }
+                #entries a.edit:before { content:'>'; display:block; float:left; margin-right: 0.5em; }
 		#entries time { float:right; position:absolute; top:0.9em; right:4em; font-size:13px; color:#999; }
 		nav ul, nav li { line-height:1.2; display:block; margin:0; padding:0; position:relative; }
 		nav a { display:block; padding:0.6em 1em 0.6em 1em; }
 		#editor-wrap { display:block; display:block; }
-		form {  margin:0 auto; padding:1em 2em; display:none; position:absolute; top:1.9em; left:0; bottom:0; right:0; }
-		form input.title { font-family:inherit; font-weight:bold; width:inherit; outline:none; background:transparent; color:#000; border:1px dotted transparent; padding:5px 18px; margin:0; font-size:1em; position:absolute; top:1.3em; left:0; right:0; }
-		textarea { width:inherit; color:#333; background:transparent; font:12px/1.6 'Monaco', 'Lucida Console', monospace; outline:none; display:block; margin:0; padding:15px; position:absolute; left:0; right:0; bottom:0; top:35px; border:none; }
-		textarea { max-width:580px; } 
+		form {  margin:0 auto; padding:0.5em; display:none; position:absolute; top:0; left:0; bottom:0; right:0; }
+		form input.title { font-family:inherit; font-weight:bold; width:inherit; outline:none; background: #ddd; color:#000; border:1px dotted transparent; padding:5px 18px; margin:0; font-size:1em; position:absolute; top:1.3em; left:0; right:0; }
+		textarea { width:inherit; color:#333; background: #ddd; outline:none; display:block; margin:0; padding:15px; position:absolute; left:0; right:0; bottom:0; top:0; border:none; }
+		textarea { box-sizing: border-box; width: 100%; font-family: 'cutive_monoregular', monospace; font-size: 22px; font-weight: bold; }
 		nav a.delete { color:#666; background:#fff; display:none; position:absolute; padding:0.5em; right:1em; top:0.4em; -moz-border-radius:1em; -webkit-border-radius:1em; width:0.6em; height:0.6em; line-height:0.5; text-align:center; }
 		nav a.delete:hover { background:#fff; }
 		nav li:hover a.delete { display:block; }
-		#tools { padding:0.5em 0; position:fixed; line-height:1; top:0; right:0; left:0; z-index:10; }
+		#tools { padding:0.5em 0; position:fixed; line-height:1; bottom:0; right:0; left:0; z-index:10; }
 		#tools a { -webkit-border-radius:0.5em; display:block; float:left; padding:0.36em 0.8em; color:#fff; background:#ccc; text-shadow:none; }
 		#tools a:focus { background:#000; }
 		#tools a:hover { color:#fff; background:#333; text-shadow:none; }
@@ -49,9 +50,10 @@
 		#tools #tool-logout { float:right; }
 		#tools #tool-preview { display:none; }
 		#credits { position:fixed; bottom:2em; right:2em; float:left; }
-		.wysiwym-buttons { position:relative; z-index:30; margin-left:-20px; }
+		.wysiwym-buttons { position:relative; z-index:30; float: right; }
 		.wysiwym-help-toggle { display:none; }
-		#preview { display:none; position: absolute; z-index:50; padding:5px 10px; border:5px solid #ccc; top:0; left:0; right:0; background:#fff; min-height:70%; }
+                .wysiwym-buttons .button { background-image: none !important; }
+		#preview { display:none; position: absolute; z-index:50; padding:5px 10px; border:5px solid #ccc; top:0; left:0; right:0; background:#fff; min-height:85%; }
 		#preview nav li { float:right; }
 		#preview nav ul { float:right; margin-bottom:-10em; }
 		#close-preview a {  }
