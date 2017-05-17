@@ -38,7 +38,7 @@
 		nav a.delete:hover { background:#fff; }
 		nav li:hover a.delete { display:block; }
 		#tools { padding:0.5em 0; position:fixed; line-height:1; bottom:0; right:0; left:0; z-index:10; }
-		#tools a { -webkit-border-radius:0.5em; display:block; float:left; padding:0.36em 0.8em; color:#fff; background:#ccc; text-shadow:none; }
+		#tools a { -webkit-border-radius:0.5em; display:block; float:left; padding:0.36em 0.8em; color:#888; background:#ccc; text-shadow:none; }
 		#tools a:focus { background:#000; }
 		#tools a:hover { color:#fff; background:#333; text-shadow:none; }
 		#tools li { float:left; margin-right:0.5em; display:block; list-style-type:none; }
@@ -59,6 +59,20 @@
 		#preview nav li { float:right; }
 		#preview nav ul { float:right; margin-bottom:-10em; }
 		#close-preview a {  }
+
+                @media screen and (max-width: 600px) {
+                    textarea {
+                      font-size: 15px !important;
+                    }
+
+                    div.wysiwym-buttons {
+                      display: none !important;
+                    }
+
+                    #tools #tool-preview {
+                      display: none !important;
+                    }
+                }
 	</style>
 </head>
 <body>
