@@ -188,6 +188,16 @@ jQuery(document).ready(function($) {
 		save_entry();
 		sync();
 	});
+
+        $(document).keydown(function(e) {
+                if((e.ctrlKey || e.metaKey) && e.which == 83) {
+                    console.log(e.keyCode, e);
+                    e.preventDefault();
+                    save_entry();
+                    sync();
+                    return false;
+                };
+	});
 	
 	var showdown = new Showdown.converter();
 
