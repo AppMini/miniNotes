@@ -132,9 +132,14 @@ jQuery(document).ready(function($) {
 	sync();
 
 	$(window).bind('load hashchange', function () {
-          $('a[href="'+ window.location.hash +'"]').filter(':not(.delete)').trigger('click');
-          console.log($('a[href="'+ window.location.hash +'"]').filter(':not(.delete)'));
-          return false;
+          console.log("hash:", window.location.hash);
+          if (window.location.hash != "") {
+            $('a[href="'+ window.location.hash +'"]').filter(':not(.delete)').trigger('click');
+            console.log($('a[href="'+ window.location.hash +'"]').filter(':not(.delete)'));
+            return false;
+          } else {
+            window.location.hash = "#index";
+          }
 	});
 
 	$('textarea').wysiwym(Wysiwym.Markdown, { helpEnabled: false });
