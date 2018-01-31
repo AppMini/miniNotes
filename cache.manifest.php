@@ -1,6 +1,6 @@
 <?php header('Content-Type: text/cache-manifest'); ?>
 CACHE MANIFEST
-# v201706251
+# v201801313
 
 CACHE:
 index.html
@@ -12,10 +12,11 @@ js/wysiwym/wysiwym.css
 js/wysiwym/buttons.light.png
 js/coreyti-showdown/showdown.js
 js/pretty.js
-font/stylesheet.css
-font/cutivemono-regular-webfont.woff2
-font/cutivemono-regular-webfont.woff
 
 NETWORK:
+font/stylesheet.css
+font/cutivemono.woff2
+font/cutivemono.woff
+font/*
 sync.php
 logout.php
