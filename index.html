@@ -261,7 +261,7 @@ jQuery(document).ready(function($) {
 	
 	function sync() {
 		if (navigator.onLine) {
-			$.post('sync.php', localStorage, function(data) {
+			$.post('sync.php', JSON.parse(JSON.stringify(localStorage)), function(data) {
 				console.log(data);
 				localStorage.setItem('index', JSON.stringify(data.index));
 				for (k in data.entries) {
